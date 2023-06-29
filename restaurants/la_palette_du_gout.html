@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Booki</title>
+    <title>La Palette du Goût</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;500;700&display=swap" rel="stylesheet">
@@ -12,19 +12,113 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
         integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
         crossorigin="anonymous" referrerpolicy="no-referrer">
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="../assets/css/style.css">
     <script src="https://kit.fontawesome.com/1633400601.js" crossorigin="anonymous"></script>
 </head>
 
 <body>
-    <header class="header">
-        <img src="images/logo/ohmyfood.png" alt="Logo de Ohmyfood">
+    <header class="header menu-header">
+        <a class="header-menu-link" href="../index.html">
+            <i class="fa-solid fa-arrow-left fa-lg"></i>
+        </a>
+        <img src="../assets/images/logo/ohmyfood.png" alt="Logo de Ohmyfood">
     </header>
-    <main>
-
+    <main class="main-menu">
+        <div class="menu-image">
+            <img src="../assets/images/restaurants/jay-wennington-N_Y88TWmGwA-unsplash.jpg" alt="La palette du goût">
+        </div>
+        <div class="menu">
+            <div class="menu-title">
+                <h1>La palette du goût</h1>
+                <i class="fa-regular fa-heart fa-lg"></i>
+            </div>
+            <div class="menu-meals">
+                <div class="menu-meal">
+                    <p class="menu-meal-title">ENTRÉES</p>
+                    <div class="menu-cards">
+                        <div class="menu-card">
+                            <div class="card-text">
+                                <h2 class="card-name">Fricassée d'escargots</h3>
+                                <p class="card-city">Au piment d'Espelette</p>
+                            </div>
+                            <p class="menu-card-price">25€</p>
+                        </div>
+                        <div class="menu-card">
+                            <div class="card-text">
+                                <h2 class="card-name">Foie gras de canard mi-cuit</h3>
+                                <p class="card-city">Et ses copeaux de truffe noire</p>
+                            </div>
+                            <p class="menu-card-price">35€</p>
+                        </div>
+                        <div class="menu-card">
+                            <div class="card-text">
+                                <h2 class="card-name">Œuf au plat</h3>
+                                <p class="card-city">Assaisonné à la truffe sur lit de caviar</p>
+                            </div>
+                            <p class="menu-card-price">20€</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-meal">
+                    <p class="menu-meal-title">PLATS</p>
+                    <div class="menu-cards">
+                        <div class="menu-card">
+                            <div class="card-text">
+                                <h2 class="card-name">Fricassée d'escargots</h3>
+                                <p class="card-city">Au piment d'Espelette</p>
+                            </div>
+                            <p class="menu-card-price">25€</p>
+                        </div>
+                        <div class="menu-card">
+                            <div class="card-text">
+                                <h2 class="card-name">Foie gras de canard mi-cuit</h3>
+                                <p class="card-city">Et ses copeaux de truffe noire</p>
+                            </div>
+                            <p class="menu-card-price">35€</p>
+                        </div>
+                        <div class="menu-card">
+                            <div class="card-text">
+                                <h2 class="card-name">Œuf au plat</h3>
+                                <p class="card-city">Assaisonné à la truffe sur lit de caviar</p>
+                            </div>
+                            <p class="menu-card-price">20€</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="menu-meal">
+                    <p class="menu-meal-title">DESSERTS</p>
+                    <div class="menu-cards">
+                        <div class="menu-card">
+                            <div class="card-text">
+                                <h2 class="card-name">Filet de bœuf aux herbes</h3>
+                                <p class="card-city">Accompagné de sa ribambelle de légumes</p>
+                            </div>
+                            <p class="menu-card-price">40€</p>
+                        </div>
+                        <div class="menu-card">
+                            <div class="card-text">
+                                <h2 class="card-name">Parmentier de queue de bœuf</h3>
+                                <p class="card-city">À la truffe noire sur sa purée de panais</p>
+                            </div>
+                            <p class="menu-card-price">35€</p>
+                        </div>
+                        <div class="menu-card">
+                            <div class="card-text">
+                                <h2 class="card-name">Filet de turbot</h3>
+                                <p class="card-city">Aux agrumes</p>
+                            </div>
+                            <p class="menu-card-price">44€</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="reservation-button menu-button">
+                <a href="#">Commander</a>
+            </div>
+        </div>
     </main>
     <footer class="footer">
-        <p class="footer-ohmyfood">ohmyfood</p>
+        <p class="footer-logo">ohmyfood</p>
         <div class="footer-content">
             <div class="footer-restaurant">
                 <i class="fa-solid fa-utensils"></i>
@@ -35,7 +129,7 @@
                 <p>Devenir partenaire</p>
             </div>
             <p>Mentions légales</p>
-            <a class="footer-contact" href="#">Contact</p>
+            <a class="footer-contact" href="#">Contact</a>
         </div>
     </footer>
 </body>
