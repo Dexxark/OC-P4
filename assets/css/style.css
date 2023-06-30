@@ -11,7 +11,7 @@
     --grey-one-color: #353535;
     --grey-two-color: #EAEAEA;
     --green-color: #99E2D0;
-    --green-font: #008766;
+    --green-font-color: #008766;
 }
 
 .fa-solid {
@@ -38,11 +38,11 @@ a {
     top: 0px;
     background: linear-gradient(to right, var(--secondary-color), var(--primary-color));
     z-index: 2;
-    animation: fade 0s 0s forwards;
-    /* animation: fade 1s 2s forwards; */
+    /*animation: fade 0s 0s forwards; */
+    animation: loader-fade 1s 2s forwards;
 }
 
-@keyframes fade {
+@keyframes loader-fade {
     0% { opacity: 100%; }
     100% { 
         opacity: 0%;
@@ -55,6 +55,7 @@ a {
     height: 100%;
     color: white;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
 }
@@ -63,6 +64,43 @@ a {
     font-family: 'Shrikhand', cursive;
     font-size: 24px;
     font-weight: 500;
+}
+
+.lds-ring {
+    display: inline-block;
+    position: relative;
+    width: 80px;
+    height: 80px;
+}
+
+.lds-ring div {
+    box-sizing: border-box;
+    display: block;
+    position: absolute;
+    width: 64px;
+    height: 64px;
+    margin: 8px;
+    border: 8px solid #fff;
+    border-radius: 50%;
+    animation: lds-ring 1.2s cubic-bezier(0.5, 0, 0.5, 1) infinite;
+    border-color: #fff transparent transparent transparent;
+}
+
+.lds-ring div:nth-child(1) {
+    animation-delay: -0.45s;
+}
+
+.lds-ring div:nth-child(2) {
+    animation-delay: -0.3s;
+}
+
+.lds-ring div:nth-child(3) {
+    animation-delay: -0.15s;
+}
+
+@keyframes lds-ring {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 /***** Header *****/
@@ -91,7 +129,7 @@ a {
     margin-right: 17px;
 }
 
-.search {
+.location-city {
     margin: 16px 0px;
     font-size: 16px;
     font-weight: 500;
@@ -126,18 +164,23 @@ a {
     border-radius: 25px;
     color: white;
     background: linear-gradient(to bottom, var(--secondary-color), var(--primary-color));
+    filter: drop-shadow(0px 5px 10px rgba(0, 0, 0, 0.3));
+}
+
+.reservation-button a:hover {
+    background: linear-gradient(to bottom, rgba(255, 141, 228), rgba(147, 106, 230));
+    filter: drop-shadow(0px 5px 10px rgba(0, 0, 0, 0.5));
 }
 
 
 /***** Fonctionnement *****/
 .fonctionnement {
-    margin: 50px 0px 70px 0px;
+    margin: 50px 20px 70px 20px;
 }
 
 .fonctionnement-title {
     height: 31px;
     margin: 0px 0px 26px 0px;
-    padding-left: 20px;
     font-size: 24px;
 }
 
@@ -148,8 +191,10 @@ a {
 }
 
 .fonctionnement-button {
+    margin-left: 12px;
     display: flex;
     align-items: center;
+    position: relative;
 }
 
 .fonctionnement-button:hover .fa-solid{
@@ -157,9 +202,8 @@ a {
 }
 
 .numero-button {
-    width: 32px;
+    width: 24px;
     height: 24px;
-    margin: 0px -12px 0px 20px;
     z-index: 1;
     display: flex;
     align-items: center;
@@ -168,12 +212,13 @@ a {
     border-radius: 25px;
     color: white;
     background-color: var(--primary-color);
+    position: absolute;
+    left: -12px;
 }
 
 .fonctionnement-button-content {
     width: 100%;
-    margin: 0px 20px 0px 0px;
-    padding: 0px 18px;
+    padding: 10px 20px 10px 35px;
     display: flex;
     align-items: center;
     border-radius: 10px;
@@ -183,7 +228,7 @@ a {
 
 .fonctionnement-button-content i {
     width: 20px;
-    margin: 0px 20px 0px 20px;
+    margin-right: 25px;
 }
 
 .fonctionnement-text {
@@ -230,7 +275,7 @@ a {
     right: 15px;
     font-size: 14px;
     font-weight: 500;
-    color: var(--green-font);
+    color: var(--green-font-color);
     background-color: var(--green-color);
 }
 
@@ -248,18 +293,6 @@ a {
 .card-text {
     padding-left: 13px;
     padding-bottom: 12px;
-}
-
-.card-name {
-    margin-bottom: 5px;
-    font-size: 18px;
-    font-weight: 700;
-}
-
-.card-city {
-    margin: 0px;
-    font-size: 17px;
-    font-weight: 300;
 }
 
 
@@ -322,14 +355,13 @@ a {
 .menu-image img {
     width: 100%;
     height: 275px;
-    z-index: 2;
+    object-fit: cover;
 }
 
 .menu {
     margin-top: -32px;
     border-top-left-radius: 25px;
     border-top-right-radius: 25px;
-    z-index: 3;
     background-color: var(--background-color);
 }
 
@@ -357,6 +389,7 @@ a {
 .menu-meal-title {
     width: 40px;
     margin: 0px;
+    opacity: 0;
     border-bottom: 3px solid var(--tertiary-color);
 }
 
@@ -368,19 +401,142 @@ a {
 }
 
 .menu-card {
+    opacity: 0;
+    overflow: hidden;
     display: flex;
-    align-items: end;
     justify-content: space-between;
     background-color: white;
     border-radius: 15px;
     filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, 0.1));
 }
 
+.menu-animation-one {
+    animation: menu-fade 1s 0.2s forwards;
+}
+
+.menu-animation-two {
+    animation: menu-fade 1s 0.4s forwards;
+}
+
+.menu-animation-three {
+    animation: menu-fade 1s 0.6s forwards;
+}
+
+.menu-animation-four {
+    animation: menu-fade 1s 0.8s forwards;
+}
+
+.menu-animation-five {
+    animation: menu-fade 1s 1.0s forwards;
+}
+
+.menu-animation-six {
+    animation: menu-fade 1s 1.2s forwards;
+}
+
+.menu-animation-seven {
+    animation: menu-fade 1s 1.4s forwards;
+}
+
+.menu-animation-eight {
+    animation: menu-fade 1s 1.6s forwards;
+}
+
+.menu-animation-nine {
+    animation: menu-fade 1s 1.8s forwards;
+}
+
+.menu-animation-ten {
+    animation: menu-fade 1s 2.0s forwards;
+}
+
+.menu-animation-eleven {
+    animation: menu-fade 1s 2.2s forwards;
+}
+
+.menu-animation-twelve {
+    animation: menu-fade 1s 2.4s forwards;
+}
+
+.menu-animation-thirteen {
+    animation: menu-fade 1s 2.6s forwards;
+}
+
+@keyframes menu-fade {
+    0% { opacity: 0; }
+    100% { opacity: 1; }
+}
+
+.menu-card-content {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: end;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.menu-card-text {
+    width: 100%;
+    padding-left: 13px;
+    padding-bottom: 12px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.menu-card-name {
+    width: 90%;
+    margin-bottom: 5px;
+    font-size: 18px;
+    font-weight: 700;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+.menu-card-city {
+    width: 90%;
+    margin: 0px;
+    font-size: 17px;
+    font-weight: 300;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
 .menu-card-price {
     margin-right: 15px;
-    margin-bottom: 13px;
+    margin-bottom: 12px;
     font-size: 15px;
     font-weight: 700;
+}
+
+.menu-check {
+    height: 100%;
+    margin-right: -64px;
+    background-color: var(--green-color);
+    border-top-right-radius: 15px;
+    border-bottom-right-radius: 15px;
+    transition: margin-right 0.5s ease-out;
+}
+
+.menu-card:hover .menu-check {
+    margin-right: 0px;
+}
+
+.menu-check i {
+    width: 16px;
+    height: 16px;
+    margin: 25px 20px;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 25px;
+    color: var(--green-color);
+    background-color: white;
 }
 
 .menu-button {
@@ -400,6 +556,8 @@ a {
 
     /***** Fonctionnement *****/
     .fonctionnement {
+        margin-left: 0px;
+        margin-right: 0px;
         padding-left: calc(100% * 0.125);
         padding-right: calc(100% * 0.125);
     }
@@ -409,11 +567,9 @@ a {
     }
 
     .fonctionnement-buttons {
-        margin-left: -20px;
-        margin-right: -20px;
         display: flex;
         flex-direction: row;
-        gap: 0px;
+        gap: 36px;
     }
 
     .fonctionnement-button {
@@ -435,6 +591,7 @@ a {
         flex-direction: row;
         flex-wrap: wrap;
         justify-content: space-between;
+        gap: 50px;
     }
 
     .restaurants-card {
@@ -459,5 +616,11 @@ a {
         margin-top: 0px;
         flex-direction: row;
         justify-content: space-between;
+    }
+
+    /***** Menu *****/
+    .menu {
+        margin-left: calc(100% * 0.125);
+        margin-right: calc(100% * 0.125);
     }
 }
