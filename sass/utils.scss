@@ -1,4 +1,5 @@
 /***** Variables *****/
+
 $primary-color: #9356DC;
 $secondary-color: #FF79DA;
 $tertiary-color: #99E2D0;
@@ -9,7 +10,9 @@ $green-color: #99E2D0;
 $green-font-color: #008766;
 
 
+
 /***** Mixins *****/
+
 @mixin shadow-light {
     filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, 0.1));
 }
@@ -26,4 +29,20 @@ $green-font-color: #008766;
     display: flex;
     justify-content: center;
     align-items: center;
+}
+
+@mixin shrik {
+    font-family: 'Shrikhand', cursive;
+}
+
+@mixin gradient-bottom {
+    background: linear-gradient(to bottom, $secondary-color, $primary-color);
+}
+
+@mixin gradient-light {
+    background: linear-gradient(to bottom, rgba(255, 141, 228), rgba(147, 106, 230));
+}
+
+@mixin gradient-right {
+    background: linear-gradient(to right, $secondary-color, $primary-color);
 }

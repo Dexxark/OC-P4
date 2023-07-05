@@ -4,7 +4,7 @@
     width: 100%;
     height: 100%;
     top: 0px;
-    background: linear-gradient(to right, $secondary-color, $primary-color);
+    @include gradient-right;
     z-index: 2;
     animation: loader-fade 1s 2s forwards;
 }
@@ -25,7 +25,7 @@
     flex-direction: column;
 
     p {
-        font-family: 'Shrikhand', cursive;
+        @include shrik;
         font-size: 24px;
         font-weight: 500;
     }
@@ -113,11 +113,11 @@
         font-size: 16px;
         border-radius: 25px;
         color: white;
-        background: linear-gradient(to bottom, $secondary-color, $primary-color);
+        @include gradient-bottom;
         @include shadow-button;
 
         &:hover {
-            background: linear-gradient(to bottom, rgba(255, 141, 228), rgba(147, 106, 230));
+            @include gradient-light;
             @include shadow-hover;
         }
     }
@@ -265,7 +265,7 @@
         position: absolute;
         opacity: 0;
         @include flex-double-center;
-        background: linear-gradient(to right, $secondary-color, $primary-color);
+        @include gradient-right;
         background-clip: text;
         -webkit-background-clip: text;
         color: transparent;

@@ -39,7 +39,7 @@ a {
     margin: 0px;
     color: white;
     font-size: 18px;
-    font-family: 'Shrikhand', cursive;
+    @include shrik;
 }
 
 .footer-content {
