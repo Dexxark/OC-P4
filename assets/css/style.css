@@ -1,21 +1,6 @@
-/***** General *****/
+/***** Color *****/ /***** General *****/
 * {
   font-family: "Roboto", sans-serif;
-}
-
-:root {
-  --primary-color: #9356DC;
-  --secondary-color: #FF79DA;
-  --tertiary-color: #99E2D0;
-  --background-color: #F6F6F6;
-  --grey-one-color: #353535;
-  --grey-two-color: #EAEAEA;
-  --green-color: #99E2D0;
-  --green-font-color: #008766;
-}
-
-.fa-solid {
-  color: var(--main-color);
 }
 
 body {
@@ -29,15 +14,82 @@ a {
   text-decoration: none;
 }
 
+/***** Header *****/
+.header {
+  margin: 14px 0px;
+  display: flex;
+  justify-content: center;
+}
+.header img {
+  height: 36px;
+  margin: 0px;
+}
+
+/***** Footer *****/
+.footer {
+  padding: 22px 25px;
+  color: white;
+  background-color: #353535;
+}
+
+.footer-logo {
+  margin: 0px;
+  color: white;
+  font-size: 18px;
+  font-family: "Shrikhand", cursive;
+}
+
+.footer-content {
+  margin-top: 16px;
+  font-size: 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+.footer-content p {
+  margin: 0px;
+}
+
+.footer-restaurant, .footer-partenaire {
+  display: flex;
+  align-items: center;
+}
+.footer-restaurant i, .footer-partenaire i {
+  width: 18px;
+  margin-right: 10px;
+}
+
+.footer-contact {
+  color: white;
+  text-decoration: none;
+}
+
+/* Large devices (desktop, more than 768px) */
+@media (min-width: 768px) {
+  /***** Footer *****/
+  .footer {
+    padding: 58px 0px 30px 0px;
+    display: flex;
+    flex-direction: row-reverse;
+    align-items: center;
+  }
+  .footer-logo {
+    margin: 0px 4%;
+  }
+  .footer-content {
+    margin-top: 0px;
+    flex-direction: row;
+    gap: 15px;
+  }
+}
 /***** Loader *****/
 .loader {
   position: fixed;
   width: 100%;
   height: 100%;
   top: 0px;
-  background: linear-gradient(to right, var(--secondary-color), var(--primary-color));
+  background: linear-gradient(to right, #FF79DA, #9356DC);
   z-index: 2;
-  /*animation: fade 0s 0s forwards; */
   animation: loader-fade 1s 2s forwards;
 }
 
@@ -101,24 +153,13 @@ a {
     transform: rotate(360deg);
   }
 }
-/***** Header *****/
-.header {
-  margin: 14px 0px;
-  display: flex;
-  justify-content: center;
-}
-.header img {
-  height: 36px;
-  margin: 0px;
-}
-
 /***** Location *****/
 .location {
   display: flex;
   justify-content: center;
   align-items: center;
   color: #353535;
-  background-color: var(--grey-two-color);
+  background-color: #EAEAEA;
 }
 .location .fa-solid {
   margin-right: 17px;
@@ -134,7 +175,7 @@ a {
 .reservation {
   padding: 40px 0px 70px 0px;
   text-align: center;
-  background-color: var(--background-color);
+  background-color: #F6F6F6;
 }
 
 .reservation-title {
@@ -156,7 +197,7 @@ a {
   font-size: 16px;
   border-radius: 25px;
   color: white;
-  background: linear-gradient(to bottom, var(--secondary-color), var(--primary-color));
+  background: linear-gradient(to bottom, #FF79DA, #9356DC);
   filter: drop-shadow(0px 5px 10px rgba(0, 0, 0, 0.3));
 }
 .reservation-button a:hover {
@@ -188,7 +229,7 @@ a {
   position: relative;
 }
 .fonctionnement-button:hover .fa-solid {
-  color: var(--primary-color);
+  color: #9356DC;
 }
 
 .numero-button {
@@ -201,7 +242,7 @@ a {
   font-size: 14px;
   border-radius: 25px;
   color: white;
-  background-color: var(--primary-color);
+  background-color: #9356DC;
   position: absolute;
   left: -12px;
 }
@@ -212,7 +253,7 @@ a {
   display: flex;
   align-items: center;
   border-radius: 10px;
-  background-color: var(--background-color);
+  background-color: #F6F6F6;
   filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, 0.1));
 }
 .fonctionnement-button-content i {
@@ -226,7 +267,7 @@ a {
 /***** Restaurants *****/
 .restaurants {
   padding: 55px 18px 65px 18px;
-  background-color: var(--background-color);
+  background-color: #F6F6F6;
 }
 
 .restaurants-title {
@@ -261,8 +302,8 @@ a {
   right: 15px;
   font-size: 14px;
   font-weight: 500;
-  color: var(--green-font-color);
-  background-color: var(--green-color);
+  color: #008766;
+  background-color: #99E2D0;
 }
 
 .card-content {
@@ -301,7 +342,7 @@ a {
   display: flex;
   justify-content: center;
   align-items: center;
-  background: linear-gradient(to right, var(--secondary-color), var(--primary-color));
+  background: linear-gradient(to right, #FF79DA, #9356DC);
   background-clip: text;
   -webkit-background-clip: text;
   color: transparent;
@@ -323,45 +364,6 @@ a {
 }
 .card-heart .fa-regular:hover {
   opacity: 0;
-}
-
-/***** Footer *****/
-.footer {
-  padding: 22px 25px;
-  color: white;
-  background-color: var(--grey-one-color);
-}
-
-.footer-logo {
-  margin: 0px;
-  color: white;
-  font-size: 18px;
-  font-family: "Shrikhand", cursive;
-}
-
-.footer-content {
-  margin-top: 16px;
-  font-size: 16px;
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-.footer-content p {
-  margin: 0px;
-}
-
-.footer-restaurant, .footer-partenaire {
-  display: flex;
-  align-items: center;
-}
-.footer-restaurant i, .footer-partenaire i {
-  width: 18px;
-  margin-right: 10px;
-}
-
-.footer-contact {
-  color: white;
-  text-decoration: none;
 }
 
 /* Large devices (desktop, more than 768px) */
@@ -406,21 +408,6 @@ a {
   .restaurants-card {
     width: 45%;
   }
-  /***** Footer *****/
-  .footer {
-    padding: 58px 0px 30px 0px;
-    display: flex;
-    flex-direction: row-reverse;
-    align-items: center;
-  }
-  .footer-logo {
-    margin: 0px 4%;
-  }
-  .footer-content {
-    margin-top: 0px;
-    flex-direction: row;
-    gap: 15px;
-  }
 }
 .menu-header {
   align-items: center;
@@ -446,7 +433,7 @@ a {
   margin-top: -32px;
   border-top-left-radius: 25px;
   border-top-right-radius: 25px;
-  background-color: var(--background-color);
+  background-color: #F6F6F6;
 }
 
 .menu-title {
@@ -477,7 +464,7 @@ a {
   width: 40px;
   margin: 0px;
   opacity: 0;
-  border-bottom: 3px solid var(--tertiary-color);
+  border-bottom: 3px solid #99E2D0;
 }
 
 .menu-cards {
@@ -609,7 +596,7 @@ a {
 .menu-check {
   height: 100%;
   margin-right: -64px;
-  background-color: var(--green-color);
+  background-color: #99E2D0;
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
   transition: margin-right 0.5s ease-out;
@@ -623,7 +610,7 @@ a {
   align-items: center;
   justify-content: center;
   border-radius: 25px;
-  color: var(--green-color);
+  color: #99E2D0;
   background-color: white;
 }
 
