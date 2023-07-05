@@ -1,0 +1,29 @@
+/***** Variables *****/
+$primary-color: #9356DC;
+$secondary-color: #FF79DA;
+$tertiary-color: #99E2D0;
+$background-color: #F6F6F6;
+$grey-one-color: #353535;
+$grey-two-color: #EAEAEA;
+$green-color: #99E2D0;
+$green-font-color: #008766;
+
+
+/***** Mixins *****/
+@mixin shadow-light {
+    filter: drop-shadow(0px 5px 5px rgba(0, 0, 0, 0.1));
+}
+
+@mixin shadow-button {
+    filter: drop-shadow(0px 5px 10px rgba(0, 0, 0, 0.3));
+}
+
+@mixin shadow-hover {
+    filter: drop-shadow(0px 5px 10px rgba(0, 0, 0, 0.5));
+}
+
+@mixin flex-double-center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
