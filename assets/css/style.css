@@ -191,10 +191,10 @@ a {
   font-size: 18px;
 }
 
-.reservation-button {
+.reservation-button, .menu-button {
   margin-top: 40px;
 }
-.reservation-button a {
+.reservation-button a, .menu-button a {
   padding: 13px 19px;
   font-size: 16px;
   border-radius: 25px;
@@ -202,7 +202,7 @@ a {
   background: linear-gradient(to bottom, #FF79DA, #9356DC);
   filter: drop-shadow(0px 5px 10px rgba(0, 0, 0, 0.3));
 }
-.reservation-button a:hover {
+.reservation-button a:hover, .menu-button a:hover {
   background: linear-gradient(to bottom, rgb(255, 141, 228), rgb(147, 106, 230));
   filter: drop-shadow(0px 5px 10px rgba(0, 0, 0, 0.5));
 }

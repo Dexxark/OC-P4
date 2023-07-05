@@ -206,6 +206,7 @@
 }
 
 .menu-button {
+    @extend .reservation-button;
     margin-top: 40px;
     padding-bottom: 40px;
     display: flex;
