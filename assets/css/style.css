@@ -361,7 +361,7 @@ a {
   justify-content: center;
   align-items: center;
   opacity: 100%;
-  transition: opacity s;
+  transition: opacity 1s;
   cursor: pointer;
 }
 .card-heart .fa-regular:hover {
